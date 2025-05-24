@@ -87,30 +87,7 @@ const CartPage: React.FC = () => {
         </Head>
 
         <div className="min-h-screen bg-gray-50">
-          {/* Header */}
-          <header className="bg-white shadow-sm sticky top-0 z-30">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="flex items-center justify-between h-16">
-                <div className="flex items-center">
-                  <button
-                    onClick={() => router.back()}
-                    className="mr-4 text-gray-600 hover:text-blue-600"
-                  >
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                    </svg>
-                  </button>
-                  <h1 className="text-2xl font-bold text-blue-600">E-Shop</h1>
-                </div>
-                
-                <nav className="hidden md:flex space-x-8">
-                  <a href="/" className="text-gray-700 hover:text-blue-600">Home</a>
-                  <a href="/products" className="text-gray-700 hover:text-blue-600">Products</a>
-                  <a href="/about" className="text-gray-700 hover:text-blue-600">About</a>
-                </nav>
-              </div>
-            </div>
-          </header>
+
 
           {/* Empty Cart */}
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -143,30 +120,7 @@ const CartPage: React.FC = () => {
       </Head>
 
       <div className="min-h-screen bg-gray-50">
-        {/* Header */}
-        <header className="bg-white shadow-sm sticky top-0 z-30">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between h-16">
-              <div className="flex items-center">
-                <button
-                  onClick={() => router.back()}
-                  className="mr-4 text-gray-600 hover:text-blue-600"
-                >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                  </svg>
-                </button>
-                <h1 className="text-2xl font-bold text-blue-600">E-Shop</h1>
-              </div>
-              
-              <nav className="hidden md:flex space-x-8">
-                <a href="/" className="text-gray-700 hover:text-blue-600">Home</a>
-                <a href="/products" className="text-gray-700 hover:text-blue-600">Products</a>
-                <a href="/about" className="text-gray-700 hover:text-blue-600">About</a>
-              </nav>
-            </div>
-          </div>
-        </header>
+
 
         {/* Main Content */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -249,7 +203,7 @@ const CartPage: React.FC = () => {
                               </svg>
                             </button>
                             
-                            <span className="w-12 text-center font-medium">{item.quantity}</span>
+                            <span className="w-12 text-center font-medium text-black">{item.quantity}</span>
                             
                             <button
                               onClick={() => handleQuantityChange(item, item.quantity + 1)}
