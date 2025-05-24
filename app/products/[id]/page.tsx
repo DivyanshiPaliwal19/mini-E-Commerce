@@ -205,32 +205,87 @@ const ProductDetailPage: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Image Gallery */}
             <div className="space-y-4">
-              {/* Main Image */}
-              <div className="aspect-square bg-white rounded-lg overflow-hidden">
+              {/* Main Image Carousel */}
+              <div className="relative aspect-square bg-white rounded-lg overflow-hidden group">
                 <img
                   src={productImages[selectedImageIndex]}
                   alt={product.title}
                   className="w-full h-full object-cover"
                 />
+                {/* Previous Button */}
+                <button
+                  onClick={() => setSelectedImageIndex((prev) => 
+                    prev === 0 ? productImages.length - 1 : prev - 1
+                  )}
+                  className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                  <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+                {/* Next Button */}
+                <button
+                  onClick={() => setSelectedImageIndex((prev) => 
+                    prev === productImages.length - 1 ? 0 : prev + 1
+                  )}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                  <svg className="w-6 h-6 text-black " fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+                {/* Image Counter */}
+                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/50 text-white px-3 py-1 rounded-full text-sm">
+                  {selectedImageIndex + 1} / {productImages.length}
+                </div>
               </div>
               
-              {/* Thumbnail Images */}
-              <div className="flex space-x-2 overflow-x-auto">
-                {productImages.map((image, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setSelectedImageIndex(index)}
-                    className={`flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 ${
-                      selectedImageIndex === index ? 'border-blue-600' : 'border-gray-200'
-                    }`}
-                  >
-                    <img
-                      src={image}
-                      alt={`${product.title} ${index + 1}`}
-                      className="w-full h-full object-cover"
-                    />
-                  </button>
-                ))}
+              {/* Thumbnail Images Carousel */}
+              <div className="relative">
+                <div className="flex space-x-2 overflow-x-auto scrollbar-hide">
+                  {productImages.map((image, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setSelectedImageIndex(index)}
+                      className={`flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 ${
+                        selectedImageIndex === index ? 'border-blue-600' : 'border-gray-200'
+                      }`}
+                    >
+                      <img
+                        src={image}
+                        alt={`${product.title} ${index + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </button>
+                  ))}
+                </div>
+                {/* Thumbnail Navigation Buttons */}
+                {/* <button
+                  onClick={() => {
+                    const container = document.querySelector('.scrollbar-hide');
+                    if (container) {
+                      container.scrollLeft -= 100;
+                    }
+                  }}
+                  className="absolute left-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-md -translate-x-1/2"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button> */}
+                {/* <button
+                  onClick={() => {
+                    const container = document.querySelector('.scrollbar-hide');
+                    if (container) {
+                      container.scrollLeft += 100;
+                    }
+                  }}
+                  className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-md translate-x-1/2"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button> */}
               </div>
             </div>
 
