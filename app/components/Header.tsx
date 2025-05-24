@@ -27,10 +27,10 @@ const Header: React.FC = () => {
           </div>
           
           <div className="flex items-center space-x-4">
-            <nav className="hidden md:flex space-x-8">
-              <a onClick={() => router.push("/")} className="text-gray-700 hover:text-blue-600">Home</a>
-              <a onClick={() => router.push("/products")} className="text-gray-700 hover:text-blue-600">Products</a>
-              <a onClick={() => router.push("/categories")} className="text-gray-700 hover:text-blue-600">Categories</a>
+            <nav className="hidden md:flex space-x-8 ">
+              <a onClick={() => router.push("/")} className="text-gray-700 hover:text-blue-600 cursor-pointer">Home</a>
+              <a onClick={() => router.push("/products")} className="text-gray-700 hover:text-blue-600 cursor-pointer">Products</a>
+              <a onClick={() => router.push("/about")} className="text-gray-700 hover:text-blue-600 cursor-pointer">About</a>
             </nav>
             <button
               onClick={() => router.push('/cart')}
