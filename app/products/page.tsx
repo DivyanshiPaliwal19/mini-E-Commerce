@@ -140,7 +140,7 @@ const ProductListingPage: React.FC = () => {
   return (
     <>
       <Head>
-        <title>Products - ShopEase</title>
+        <title>Products - E-Shop</title>
         <meta name="description" content="Browse our extensive collection of products with advanced filtering options." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
@@ -151,7 +151,7 @@ const ProductListingPage: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-16">
               <div className="flex items-center">
-                <h1 className="text-2xl font-bold text-blue-600">ShopEase</h1>
+                <h1 className="text-2xl font-bold text-blue-600">E-Shop</h1>
               </div>
               
               {/* Search Bar */}

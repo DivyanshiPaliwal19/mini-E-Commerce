@@ -141,7 +141,7 @@ const ProductDetailPage: React.FC = () => {
   return (
     <>
       <Head>
-        <title>{product.title} - ShopEase</title>
+        <title>{product.title} - E-Shop</title>
         <meta name="description" content={product.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
@@ -160,7 +160,7 @@ const ProductDetailPage: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                   </svg>
                 </button>
-                <h1 className="text-2xl font-bold text-blue-600">ShopEase</h1>
+                <h1 className="text-2xl font-bold text-blue-600">E-Shop</h1>
               </div>
               
               <div className="flex items-center space-x-4">

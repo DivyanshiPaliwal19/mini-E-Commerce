@@ -82,7 +82,7 @@ const CartPage: React.FC = () => {
     return (
       <>
         <Head>
-          <title>Shopping Cart - ShopEase</title>
+          <title>Shopping Cart - E-Shop</title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Head>
 
@@ -100,7 +100,7 @@ const CartPage: React.FC = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                     </svg>
                   </button>
-                  <h1 className="text-2xl font-bold text-blue-600">ShopEase</h1>
+                  <h1 className="text-2xl font-bold text-blue-600">E-Shop</h1>
                 </div>
                 
                 <nav className="hidden md:flex space-x-8">
@@ -138,7 +138,7 @@ const CartPage: React.FC = () => {
   return (
     <>
       <Head>
-        <title>Shopping Cart ({items.length}) - ShopEase</title>
+        <title>Shopping Cart ({items.length}) - E-Shop</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
@@ -156,7 +156,7 @@ const CartPage: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                   </svg>
                 </button>
-                <h1 className="text-2xl font-bold text-blue-600">ShopEase</h1>
+                <h1 className="text-2xl font-bold text-blue-600">E-Shop</h1>
               </div>
               
               <nav className="hidden md:flex space-x-8">

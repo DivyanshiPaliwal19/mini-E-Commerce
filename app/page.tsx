@@ -45,7 +45,7 @@ const HomePage: React.FC = () => {
     <>
     
       <Head>
-        <title>ShopEase - Your Ultimate Shopping Destination</title>
+        <title>E-Shop - Your Ultimate Shopping Destination</title>
         <meta name="description" content="Discover amazing products at unbeatable prices. Shop electronics, fashion, beauty, and more." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -57,7 +57,7 @@ const HomePage: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-16">
               <div className="flex items-center">
-                <h1 className="text-2xl font-bold text-blue-600">ShopEase</h1>
+                <h1 className="text-2xl font-bold text-blue-600">E-Shop</h1>
               </div>
               <nav className="hidden md:flex space-x-8">
                 <a href="/" className="text-gray-700 hover:text-blue-600 transition-colors duration-200">Home</a>
@@ -144,7 +144,7 @@ const HomePage: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               <div>
-                <h3 className="text-xl font-bold mb-4">ShopEase</h3>
+                <h3 className="text-xl font-bold mb-4">E-Shop</h3>
                 <p className="text-gray-300 mb-4">Your ultimate shopping destination for quality products at amazing prices.</p>
                 <div className="flex space-x-4">
                   <a href="#" className="text-gray-300 hover:text-white transition-colors duration-200">
@@ -198,7 +198,7 @@ const HomePage: React.FC = () => {
               </div>
             </div>
             <div className="border-t border-gray-700 mt-8 pt-8 text-center">
-              <p className="text-gray-300">&copy; 2024 ShopEase. All rights reserved.</p>
+              <p className="text-gray-300">&copy; 2024 E-Shop. All rights reserved.</p>
             </div>
           </div>
         </footer>
