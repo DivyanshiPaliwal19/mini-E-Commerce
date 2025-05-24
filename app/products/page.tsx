@@ -60,17 +60,17 @@ const ProductListingPage: React.FC = () => {
       if (filters.searchQuery) {
         const searchLower = filters.searchQuery.toLowerCase();
         const matchesSearch = 
-          product.title.toLowerCase().includes(searchLower) ||
-          product.description.toLowerCase().includes(searchLower) ||
-          product.brand.toLowerCase().includes(searchLower) ||
-          product.category.toLowerCase().includes(searchLower) ||
-          product.tags.some(tag => tag.toLowerCase().includes(searchLower));
+          product?.title?.toLowerCase()?.includes(searchLower) ||
+          product?.description?.toLowerCase()?.includes(searchLower) ||
+          product?.brand?.toLowerCase()?.includes(searchLower) ||
+          product?.category?.toLowerCase()?.includes(searchLower) ||
+          product?.tags?.some(tag => tag?.toLowerCase()?.includes(searchLower));
         
         if (!matchesSearch) return false;
       }
 
       // Category filter
-      if (filters.categories.length > 0 && !filters.categories.includes(product.category)) {
+      if (filters.categories.length > 0 && !filters?.categories?.includes(product.category)) {
         return false;
       }
 
