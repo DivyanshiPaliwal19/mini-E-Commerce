@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 const FeaturedCategories: React.FC = () => {
   const categories = [
@@ -40,12 +41,12 @@ const FeaturedCategories: React.FC = () => {
       productCount: '150+ Products'
     }
   ];
-
+  const router = useRouter();
   return (
     <section className="mb-12">
       <div className="flex items-center justify-between mb-8">
         <h2 className="text-3xl font-bold text-gray-800">Shop by Category</h2>
-        <button className="text-blue-600 hover:text-blue-800 font-semibold">
+        <button className="text-blue-600 hover:text-blue-800 font-semibold" onClick={() => router.push('./products')}>
           View All Categories →
         </button>
       </div>

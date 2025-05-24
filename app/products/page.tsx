@@ -176,7 +176,7 @@ const ProductListingPage: React.FC = () => {
                 <nav className="hidden md:flex space-x-8">
                   <a href="/" className="text-gray-700 hover:text-blue-600 transition-colors duration-200">Home</a>
                   <a href="/products" className="text-blue-600 font-semibold">Products</a>
-                  <a href="/categories" className="text-gray-700 hover:text-blue-600 transition-colors duration-200">Categories</a>
+                  <a href="/about" className="text-gray-700 hover:text-blue-600 transition-colors duration-200">About</a>
                 </nav>
                 <button className="relative text-gray-700 hover:text-blue-600 transition-colors duration-200">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

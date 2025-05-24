@@ -5,12 +5,14 @@ import HeroBanner from './components/HeroBanner';
 import FeaturedCategories from './components/FeaturedCategories';
 import ProductCard from './components/ProductCard';
 import { Product, ProductsResponse } from './../app/types/product';
+import { useRouter } from 'next/navigation';
 
 
 const HomePage: React.FC = () => {
   const [trendingProducts, setTrendingProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const router = useRouter();
 
   useEffect(() => {
     fetchTrendingProducts();
@@ -62,7 +64,6 @@ const HomePage: React.FC = () => {
               <nav className="hidden md:flex space-x-8">
                 <a href="/" className="text-gray-700 hover:text-blue-600 transition-colors duration-200">Home</a>
                 <a href="/products" className="text-gray-700 hover:text-blue-600 transition-colors duration-200">Products</a>
-                <a href="/categories" className="text-gray-700 hover:text-blue-600 transition-colors duration-200">Categories</a>
                 <a href="/about" className="text-gray-700 hover:text-blue-600 transition-colors duration-200">About</a>
               </nav>
               <div className="flex items-center space-x-4">
@@ -99,7 +100,7 @@ const HomePage: React.FC = () => {
           <section className="mb-12">
             <div className="flex items-center justify-between mb-8">
               <h2 className="text-3xl font-bold text-gray-800">Trending Products</h2>
-              <button className="text-blue-600 hover:text-blue-800 font-semibold">
+              <button className="text-blue-600 hover:text-blue-800 font-semibold" onClick={() => router.push('./products')}>
                 View All Products →
               </button>
             </div>
