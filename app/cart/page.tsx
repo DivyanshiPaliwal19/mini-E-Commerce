@@ -11,6 +11,7 @@ import {
   removePromoCode 
 } from '../store/cartSlice';
 import type { CartItem } from '../store/cartSlice';
+import CheckoutModal from '../components/CheckoutModal';
 
 const CartPage: React.FC = () => {
   const router = useRouter();
@@ -19,6 +20,7 @@ const CartPage: React.FC = () => {
   
   const [promoInput, setPromoInput] = useState('');
   const [promoError, setPromoError] = useState('');
+  const [isCheckoutModalOpen, setIsCheckoutModalOpen] = useState(false);
 
   // Calculate totals
   const subtotal = items.reduce((sum, item) => {
@@ -74,8 +76,11 @@ const CartPage: React.FC = () => {
   };
 
   const handleCheckout = () => {
-    // alert('Proceeding to checkout...');
-    // Here you would typically redirect to checkout page
+    setIsCheckoutModalOpen(true);
+  };
+
+  const handleCloseCheckoutModal = () => {
+    setIsCheckoutModalOpen(false);
   };
 
   if (items.length === 0) {
@@ -345,6 +350,13 @@ const CartPage: React.FC = () => {
 
         {/* Mobile spacing for sticky bar */}
         <div className="lg:hidden h-20"></div>
+
+        {/* Checkout Modal */}
+        <CheckoutModal
+          isOpen={isCheckoutModalOpen}
+          onClose={handleCloseCheckoutModal}
+          total={total}
+        />
       </div>
     </>
   );
