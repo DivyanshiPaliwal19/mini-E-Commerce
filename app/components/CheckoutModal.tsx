@@ -4,9 +4,10 @@ interface CheckoutModalProps {
   isOpen: boolean;
   onClose: () => void;
   total: number;
+  onClearCart: () => void;
 }
 
-const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose, total }) => {
+const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose, total, onClearCart }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -38,6 +39,25 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose, total })
     setIsSuccess(true);
   };
 
+  const handleClose = () => {
+    onClose();
+    // Clear the cart after closing the modal
+    onClearCart();
+    // Reset form and success state when modal is closed
+    setFormData({
+      name: '',
+      email: '',
+      address: '',
+      city: '',
+      state: '',
+      zipCode: '',
+      cardNumber: '',
+      expiryDate: '',
+      cvv: ''
+    });
+    setIsSuccess(false);
+  };
+
   if (isSuccess) {
     return (
       <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
@@ -51,7 +71,7 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose, total })
             <h3 className="text-lg font-medium text-gray-900 mb-2">Order Placed Successfully!</h3>
             <p className="text-gray-600 mb-6">Thank you for your purchase. We'll send you an email confirmation shortly.</p>
             <button
-              onClick={onClose}
+              onClick={handleClose}
               className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition-colors duration-200"
             >
               Close
@@ -221,5 +241,4 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose, total })
   );
 };
 
-export default CheckoutModal; 
- 
+export default CheckoutModal;
