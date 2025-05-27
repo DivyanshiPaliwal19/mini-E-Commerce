@@ -11,14 +11,15 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {
   const discountedPrice = product.price - (product.price * product.discountPercentage / 100);
-const router = useRouter();
+  const router = useRouter();
+  
   const productDetailedHandler = () => {
     router.push(`/products/${product.id}`)
   }
 
   return (
-    <div className="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group" onClick={productDetailedHandler}>
-      <div className="relative h-48 overflow-hidden">
+    <div className="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group h-full flex flex-col" onClick={productDetailedHandler}>
+      <div className="relative h-48 overflow-hidden flex-shrink-0">
         <Image
           src={product.thumbnail}
           alt={product.title}
@@ -32,12 +33,12 @@ const router = useRouter();
         )}
       </div>
       
-      <div className="p-4">
+      <div className="p-4 flex flex-col flex-grow">
         <h3 className="font-semibold text-gray-800 mb-2 line-clamp-2 hover:text-blue-600 cursor-pointer">
           {product.title}
         </h3>
         
-        <p className="text-gray-600 text-sm mb-3 line-clamp-2">
+        <p className="text-gray-600 text-sm mb-3 line-clamp-2 flex-grow">
           {product.description}
         </p>
         
@@ -78,8 +79,11 @@ const router = useRouter();
         </div>
         
         <button
-          onClick={() => onAddToCart?.(product)}
-          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition-colors duration-200"
+          onClick={(e) => {
+            e.stopPropagation(); // Prevent card click when clicking button
+            onAddToCart?.(product);
+          }}
+          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition-colors duration-200 mt-auto"
         >
           Buy Now
         </button>

@@ -101,9 +101,10 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
 
       {/* Sidebar */}
       <div className={`
-        fixed lg:static inset-y-0 left-0 z-50 w-80 bg-white border-r border-gray-200 overflow-y-auto
+        fixed lg:static top-16 lg:top-0 inset-y-0 left-0 z-50 w-80 bg-white border-r border-gray-200 overflow-y-auto
         transform transition-transform duration-300 ease-in-out lg:transform-none
         ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
+        lg:h-screen lg:sticky
       `}>
         <div className="p-6">
           {/* Header */}

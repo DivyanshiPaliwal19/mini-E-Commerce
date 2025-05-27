@@ -47,7 +47,7 @@ const Footer = () => {
               <div>
                 <h4 className="text-lg font-semibold mb-4">Newsletter</h4>
                 <p className="text-gray-300 mb-4">Subscribe to get updates on new products and offers.</p>
-                <div className="flex">
+                {/* <div className="flex">
                   <input
                     type="email"
                     placeholder="Enter your email"
@@ -56,7 +56,7 @@ const Footer = () => {
                   <button className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-r-md transition-colors duration-200">
                     Subscribe
                   </button>
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="border-t border-gray-700 mt-8 pt-8 text-center">
