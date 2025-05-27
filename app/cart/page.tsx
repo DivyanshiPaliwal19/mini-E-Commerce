@@ -356,6 +356,7 @@ const CartPage: React.FC = () => {
           isOpen={isCheckoutModalOpen}
           onClose={handleCloseCheckoutModal}
           total={total}
+          onClearCart={() => dispatch(clearCart())}
         />
       </div>
     </>
